@@ -1,0 +1,107 @@
+@use "sass:math";
+@import "../../../../shared/styles/variables";
+
+
+.nav-bar {
+  height: 100%;
+  width: $navbar-width;
+  max-width: 100%;
+  will-change: width;
+  transition: width, background, 0.2s ease-in-out;
+  background: $dark-bg;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 5;
+  visibility: visible;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @media screen and (max-width: $breakpoint-small) {
+    width: 0;
+    visibility: hidden;
+  }
+
+  &.navbar--controlled {
+
+  }
+
+  &--expanded {
+    width: $navbar-expanded-width;
+    visibility: visible;
+    @media screen and (max-width: $breakpoint-small) {
+      background: linear-gradient(to right, $dark-bg, rgba($dark-bg, .8) 80%);
+    }
+  }
+
+  &--fixed {
+    position: fixed;
+    left: 0;
+  }
+
+  &--footer {
+    opacity: 0;
+    min-width: $nav-bar-item-width;
+
+    .nav-bar--expanded & {
+      opacity: 1;
+    }
+  }
+
+  &--header {
+    opacity: 0;
+    min-width: $nav-bar-item-width;
+
+    .nav-bar--expanded & {
+      opacity: 1;
+    }
+  }
+}
+
+.nav-bar-item {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  flex: 0;
+  text-decoration: none;
+  justify-content: center;
+  height: $nav-bar-item-height;
+  width: $nav-bar-item-height;
+  transition: border-radius 0.2s ease-in-out;
+  max-width: $nav-bar-item-width;
+  font-size: $font-size;
+
+  &.active {
+    background: rgba($nav-bar-item-bg, 0.56);
+    border-radius: math.div($nav-bar-item-height, 2);
+
+    .nav-bar--expanded & {
+      background: $nav-bar-item-bg;
+
+    }
+  }
+
+  .nav-bar--title {
+    text-transform: uppercase;
+    color: $white;
+    font-weight: bold;
+    padding: 0 3rem;
+    display: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    .nav-bar--expanded & {
+      display: inline-block;
+      position: relative;
+    }
+  }
+
+  .nav-bar--expanded & {
+    border-radius: 4px;
+    width: auto;
+    justify-content: flex-start;
+  }
+
+}

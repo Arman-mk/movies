@@ -1,0 +1,1 @@
+export const FEATURE_MOVIE_STORAGE_KEY = 'feature_movie_id';

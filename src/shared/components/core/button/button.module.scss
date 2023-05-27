@@ -1,0 +1,70 @@
+@import '../../../../shared/styles/variables.scss';
+
+.button {
+  padding: 0.75rem 1.7rem;
+  appearance: none;
+  text-align: left;
+  text-decoration: none;
+  box-sizing: border-box;
+  min-height: 2.25rem;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  width: auto;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  position: relative;
+  line-height: 1;
+  font-size: 1.2rem;
+  user-select: none;
+  cursor: pointer;
+  border: 0.0625rem solid transparent;
+  background-color: rgb(25, 113, 194);
+  color: rgb(255, 255, 255);
+
+  &--rounded {
+    border-radius: 20px;
+  }
+
+  &--primary {
+    background: $primary-btn-bg;
+    color: $primary-btn-text-color;
+
+    &:hover {
+      background: $primary-btn-hover-bg;
+    }
+  }
+
+
+  &--secondary {
+    background: $secondary-btn-bg;
+    color: $secondary-btn-text-color;
+
+    &:hover {
+      background: $secondary-btn-hover-bg;
+    }
+  }
+
+  &--inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: visible;
+
+    &--icon {
+      display: flex;
+      align-items: center;
+      margin-right: 0.625rem;
+    }
+
+    &--label {
+      white-space: nowrap;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+
+}
