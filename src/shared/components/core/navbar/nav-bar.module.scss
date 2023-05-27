@@ -30,6 +30,7 @@
   &--expanded {
     width: $navbar-expanded-width;
     visibility: visible;
+    background: linear-gradient(to right, $dark-bg,rgba($dark-bg, .9) 50%,  transparent 80%);
     @media screen and (max-width: $breakpoint-small) {
       background: linear-gradient(to right, $dark-bg, rgba($dark-bg, .8) 80%);
     }
